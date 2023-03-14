@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 require('dotenv').config();
-
 const DBConnect = require('./config/mongoDB');
 
 const { CustomError } = require('./errors/errors');
