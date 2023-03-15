@@ -14,12 +14,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Swagger docs
-const swaggerUI = require("swagger-ui-express");
-const specs = require("./swagger/swagger_config");
-app.use('/api/docs', swaggerUI.serve, swaggerUI.setup(specs));
+// const swaggerUI = require("swagger-ui-express");
+// const specs = require("./swagger/swagger_config");
+// app.use('/api/docs', swaggerUI.serve, swaggerUI.setup(specs));
 
 // Main routes
 const router = require("./routes/routes");
+app.get("/api/docs", (req, res) => res.redirect("https://cafe-de-altura-docs.netlify.app/"));
 app.use('/api/products', router);
 
 //Error handlers
